@@ -1,0 +1,110 @@
+/* Reiniciar márgenes y paddings */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Logo centrado con flex (sin absolute) */
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logoJavi {
+    width: 90px;
+    height: 90px;
+}
+
+/* Navbar / enlaces inicio */
+.containerInicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+}
+
+.containerInicio a {
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    color: black;
+    font-size: 18px;
+}
+
+.containerInicio a:hover {
+    color: red;
+}
+
+.insta {
+    width: 26px;
+}
+
+/* Galería */
+.containerGaleria {
+    display: flex;
+    flex-wrap: wrap; /* permite que las imágenes bajen de línea */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.imagenesVerticales {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+.imagenesHorizontales {
+    width: 100%;
+    max-width: 408px;
+    height: auto;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logoJavi {
+        width: 70px;
+        height: 70px;
+    }
+
+    .containerInicio a {
+        font-size: 16px;
+    }
+
+    .imagenesVerticales, .imagenesHorizontales {
+        max-width: 90%; /* ocupan casi todo el ancho en móviles */
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logoJavi {
+        width: 60px;
+        height: 60px;
+    }
+
+    .containerInicio {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .imagenesVerticales, .imagenesHorizontales {
+        max-width: 100%;
+    }
+}
